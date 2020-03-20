@@ -1,0 +1,20 @@
+#menu {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 80px;
+
+  .menu-container {
+    padding: 20px;
+    i {
+      color: white;
+      font-size: 40px;
+      transition: 100ms ease-in-out;
+
+      &:active {
+        color: #aaa;
+      }
+    }
+  }
+}
