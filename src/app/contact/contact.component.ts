@@ -1,5 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ContactService } from './contact.service';
+import to from 'await-to-js';
+
+export interface FormContents {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -10,13 +20,14 @@ export class ContactComponent implements OnInit {
   @ViewChild('contactForm', { static: true })
   form: NgForm;
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
   }
 
-
-  onSubmit() {
-    console.log(this.form.value);
+  async onSubmit() {
+    const { name, email, phone, message } = this.form.value as FormContents;
+    const [e, r] = await to(this.contactService.sendEmail(name, email, phone, message));
+    console.log(e, r);
   }
 }

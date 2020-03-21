@@ -7,21 +7,21 @@
 
       <div class="form-group">
         <label for="name">Name:</label>
-        <input [ngClass]="{invalid: name.invalid && name.touched}" type="text" name="name" id="name" ngModel required #name="ngModel">
+        <input [ngClass]="{invalid: name.invalid && name.touched}" type="text" name="name" id="name" ngModel pattern="[A-Za-z]+ [A-Za-z]+" required #name="ngModel">
       </div>
-      <p *ngIf="!name.valid && name.touched">Please enter a valid name.</p>
+      <p *ngIf="!name.valid && name.touched">Please enter your full name.</p>
 
       <div class="form-group">
         <label for="email">Email:</label>
         <input [ngClass]="{invalid: email.invalid && email.touched}" type="email" name="email" id="email" ngModel required email #email="ngModel">
       </div>
-      <p *ngIf="!email.valid && email.touched">Please enter a valid email.</p>
+      <p *ngIf="!email.valid && email.touched">Please enter a valid email address.</p>
 
       <div class="form-group">
         <label for="phone">Phone:</label>
-        <input [ngClass]="{invalid: phone.invalid && phone.touched}" type="tel" name="phone" id="phone" ngModel #phone="ngModel">
+        <input [ngClass]="{invalid: phone.invalid && phone.touched}" type="tel" name="phone" id="phone" pattern="[2-9]\d{2}-\d{3}-\d{4}" ngModel #phone="ngModel">
       </div>
-      <p *ngIf="!phone.valid && phone.touched">Please enter a valid phone.</p>
+      <p *ngIf="!phone.valid && phone.touched">Please enter a valid US phone number (with dashes).</p>
 
       <div class="form-group">
         <label for="message">Message:</label>
