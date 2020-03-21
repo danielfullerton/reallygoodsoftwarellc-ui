@@ -29,7 +29,7 @@ router.post('/', validators, sanitizers, async (req, res) => {
 
   const { phone, message, email, name } = req.body as FormContents;
   const html = buildReachOutHtml(name, email, message, phone);
-  const [e] = await to(sendEmail(process.env.EMAIL_USERNAME, `New Message from ${body.name}`, html));
+  const [e] = await to(sendEmail('sales@reallygoodsoftware.llc', `New Message from ${body.name}`, html));
   if (e) {
     console.error(e);
     return res.status(500).send({ errors: [e.message] });

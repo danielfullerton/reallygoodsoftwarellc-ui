@@ -9,7 +9,6 @@ const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(express.static(join(__dirname, '../reallygoodsoftwarellc-ui')));
-
 app.use('/assets', express.static(join(__dirname, '../reallygoodsoftwarellc-ui/assets')));
 
 app.use('/api/contact', contactRouter);
