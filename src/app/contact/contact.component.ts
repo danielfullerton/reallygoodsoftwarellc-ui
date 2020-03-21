@@ -27,12 +27,14 @@ export class ContactComponent implements OnInit {
 
   async onSubmit() {
     const { name, email, phone, message } = this.form.value as FormContents;
-    const [e, r]: [HttpErrorResponse, any] = await to(this.contactService.sendEmail(name, email, phone, message));
+    const [e, r]: [HttpErrorResponse, any] = await to(this.contactService.sendEmail(name, email, message, phone));
     if (e && e.status === 400) {
-      location.reload(); // Just reload the page if you're playing with client side stuff.
+      console.error(e);
+      // location.reload(); // Just reload the page if you're playing with client side stuff.
     } else if (e) {
       // todo: error dialog
     } else {
+      console.log(r);
       // todo: thanks dialog
     }
   }

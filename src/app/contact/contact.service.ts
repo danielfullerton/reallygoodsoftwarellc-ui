@@ -8,12 +8,13 @@ export class ContactService {
 
   constructor(private http: HttpClient) { }
 
-  sendEmail(name: string, email: string, phone: string, message: string) {
-    return this.http.post('/api/contact', {
+  sendEmail(name: string, email: string, message: string, phone?: string) {
+    const request: any = {
       name,
       email,
-      phone,
       message
-    }).toPromise();
+    };
+    if (phone) request.phone = phone;
+    return this.http.post('/api/contact', request).toPromise();
   }
 }
