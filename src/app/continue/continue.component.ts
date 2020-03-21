@@ -17,9 +17,10 @@ export class ContinueComponent implements OnInit {
     });
   }
 
-  async onClick() {
+  async onClick(e: Event) {
     if (!this.activated) return;
     await this.scrollService.scrollToNextComponent();
+    e.stopPropagation();
+    e.preventDefault();
   }
-
 }

@@ -19,7 +19,7 @@ export class ScrollService {
     window.onscroll = () => {
       if (!this.nextComponent) return;
 
-      const y = window.scrollY + (window.outerHeight - window.innerHeight);
+      const y = window.scrollY + (window.outerHeight - window.innerHeight + 50);
       if (y >= this.aboutUs.offsetTop && y < this.technologies.offsetTop) {
         this.nextComponent = this.technologies;
       } else if (y >= this.technologies.offsetTop && y < this.mission.offsetTop) {

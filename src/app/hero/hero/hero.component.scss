@@ -92,6 +92,7 @@
         max-width: 500px;
         cursor: pointer;
         transition: 100ms ease-in-out;
+        -webkit-tap-highlight-color: #00000000;
         &:hover {
           background: darken(#27b815, 10%);
         }
