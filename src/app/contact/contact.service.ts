@@ -14,7 +14,9 @@ export class ContactService {
       email,
       message
     };
-    if (phone) request.phone = phone;
+    if (phone) {
+      request.phone = phone;
+    }
     return this.http.post('/api/contact', request).toPromise();
   }
 }

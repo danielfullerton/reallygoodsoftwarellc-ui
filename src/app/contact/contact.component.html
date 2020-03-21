@@ -39,7 +39,9 @@
           </div>
           <p *ngIf="!message.valid && message.touched">Please enter a valid message.</p>
 
-          <button [disabled]="!contactForm.valid">Send Message</button>
+          <button [disabled]="!contactForm.valid || messageSent" [ngClass]="{finished: messageSent}">{{messageSent ? 'Message Sent' : 'Send Message'}}</button>
+          <span *ngIf="requestError" class="alert error-alert">{{requestError}}</span>
+          <span *ngIf="messageSent" class="alert response-alert">Thanks! We will get back to you as soon as possible.</span>
         </form>
       </div>
       <div class="info-container">

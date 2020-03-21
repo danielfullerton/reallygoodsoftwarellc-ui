@@ -32,6 +32,18 @@
         @media (min-width: 768px) {
           width: 40%;
         }
+        .alert {
+          font-size: 15px;
+          font-family: 'Roboto', sans-serif;
+          text-align: center;
+          display: block;
+        }
+        .response-alert {
+          color: #27b815;
+        }
+        .error-alert {
+          color: #d9534f;
+        }
         form {
           margin: 0 auto;
           .form-group {
@@ -88,7 +100,7 @@
             color: white;
             background: #27b815;
             padding: 15px 60px;
-            transition: 100ms ease-in-out;
+            transition: 500ms ease-in-out;
             border: none;
             font-size: 20px;
             margin: 25px auto;
@@ -103,6 +115,9 @@
             &:disabled {
               background: #aaa;
               cursor: default;
+            }
+            &.finished {
+              background: #27b81588;
             }
           }
         }

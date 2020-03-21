@@ -19,6 +19,8 @@ export interface FormContents {
 export class ContactComponent implements OnInit {
   @ViewChild('contactForm', { static: true })
   form: NgForm;
+  requestError: string;
+  messageSent = false;
 
   constructor(private contactService: ContactService) { }
 
@@ -28,12 +30,11 @@ export class ContactComponent implements OnInit {
   async onSubmit() {
     const { name, email, phone, message } = this.form.value as FormContents;
     const [e, r]: [HttpErrorResponse, any] = await to(this.contactService.sendEmail(name, email, message, phone));
-    if (e && e.status === 400) {
-      console.error(e);
-      // location.reload(); // Just reload the page if you're playing with client side stuff.
-    } else if (e) {
-      // todo: error dialog
+    if (e) {
+      this.requestError = 'Something went wrong. Please try again later or email us for help.'
     } else {
+      this.requestError = null;
+      this.messageSent = true;
       console.log(r);
       // todo: thanks dialog
     }
