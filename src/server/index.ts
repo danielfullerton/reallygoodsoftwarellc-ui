@@ -8,12 +8,14 @@ const app = express();
 
 app.use(helmet());
 app.use(bodyParser.json());
-app.use(express.static(join(__dirname, 'reallygoodsoftwarellc-ui')));
+app.use(express.static(join(__dirname, '../reallygoodsoftwarellc-ui')));
+
+app.use('/assets', express.static(join(__dirname, '../reallygoodsoftwarellc-ui/assets')));
 
 app.use('/api/contact', contactRouter);
 
 app.get('*', (req, res) => {
-  return res.sendFile(join(__dirname, 'reallygoodsoftwarellc-ui/index.html'))
+  return res.sendFile(join(__dirname, '../reallygoodsoftwarellc-ui/index.html'))
 });
 
 const port = process.env.PORT || 8080;

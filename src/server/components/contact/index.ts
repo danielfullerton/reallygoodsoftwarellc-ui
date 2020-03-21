@@ -1,6 +1,9 @@
 import * as express from 'express';
 import { FormContents } from '../../../app/contact/contact.component';
 import { check, body, validationResult} from 'express-validator';
+import { sendEmail } from './sendEmail';
+import to from 'await-to-js';
+import { buildReachOutHtml } from './buildReachOutHtml';
 
 const router = express.Router();
 
@@ -18,14 +21,20 @@ const sanitizers = [
   body('message').trim().escape()
 ];
 
-router.post('/', validators, sanitizers, (req, res) => {
+router.post('/', validators, sanitizers, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).send({ errors: errors.array() });
   }
 
-  const body = req.body as FormContents;
-  return res.status(200).send(body);
+  const { phone, message, email, name } = req.body as FormContents;
+  const html = buildReachOutHtml(name, email, message, phone);
+  const [e] = await to(sendEmail(process.env.EMAIL_USERNAME, `New Message from ${body.name}`, html));
+  if (e) {
+    console.error(e);
+    return res.status(500).send({ errors: [e.message] });
+  }
+  return res.status(200).json();
 });
 
 export const contactRouter = router;

@@ -35,8 +35,6 @@ export class ContactComponent implements OnInit {
     } else {
       this.requestError = null;
       this.messageSent = true;
-      console.log(r);
-      // todo: thanks dialog
     }
   }
 }
