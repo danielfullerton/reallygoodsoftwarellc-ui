@@ -3,33 +3,62 @@
     <div class="title-container">
       <h2>Contact Us</h2>
     </div>
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="content-container">
+      <div class="form-container">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
 
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input [ngClass]="{invalid: name.invalid && name.touched}" type="text" name="name" id="name" ngModel pattern="[A-Za-z]+ [A-Za-z]+" required #name="ngModel">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <div [ngClass]="{'input-group': true, invalid: name.invalid && name.touched}">
+              <input type="text" name="name" id="name" ngModel pattern="[A-Za-z]+ [A-Za-z]+" required #name="ngModel">
+            </div>
+          </div>
+          <p *ngIf="!name.valid && name.touched">Please enter your full name.</p>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div [ngClass]="{'input-group': true, invalid: email.invalid && email.touched}">
+              <input type="email" name="email" id="email" ngModel required email #email="ngModel">
+            </div>
+          </div>
+          <p *ngIf="!email.valid && email.touched">Please enter a valid email address.</p>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <div [ngClass]="{'input-group': true, invalid: phone.invalid && phone.touched}">
+              <input type="tel" name="phone" id="phone" pattern="[2-9]\d{2}-\d{3}-\d{4}" ngModel #phone="ngModel">
+            </div>
+          </div>
+          <p *ngIf="!phone.valid && phone.touched">Please enter a valid US phone number (with dashes).</p>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <div [ngClass]="{'input-group': true, invalid: message.invalid && message.touched}">
+              <textarea name="message" id="message" required ngModel #message="ngModel"></textarea>
+            </div>
+          </div>
+          <p *ngIf="!message.valid && message.touched">Please enter a valid message.</p>
+
+          <button [disabled]="!contactForm.valid">Send Message</button>
+        </form>
       </div>
-      <p *ngIf="!name.valid && name.touched">Please enter your full name.</p>
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input [ngClass]="{invalid: email.invalid && email.touched}" type="email" name="email" id="email" ngModel required email #email="ngModel">
+      <div class="info-container">
+        <div class="description">
+          <p>We would love the opportunity to answer any questions you have about the services we offer and how we believe we can help your business grow online.</p>
+        </div>
+        <div class="bullet-list">
+          <ul>
+            <li><i class="fa fa-angle-right"></i>Schedule time to chat with us.</li>
+            <li><i class="fa fa-angle-right"></i>Discuss the web development services we can provide.</li>
+            <li><i class="fa fa-angle-right"></i>Find out how we think we can grow your business with an online presence.</li>
+            <li><i class="fa fa-angle-right"></i>Discuss pricing and timelines.</li>
+          </ul>
+        </div>
+        <div class="contact-info">
+          <a href="mailto:info@reallygoodsoftware.llc">info@reallygoodsoftware.llc</a>
+          <a href="tel:+17707504629">‪(770) 750-4629‬</a>
+        </div>
       </div>
-      <p *ngIf="!email.valid && email.touched">Please enter a valid email address.</p>
-
-      <div class="form-group">
-        <label for="phone">Phone:</label>
-        <input [ngClass]="{invalid: phone.invalid && phone.touched}" type="tel" name="phone" id="phone" pattern="[2-9]\d{2}-\d{3}-\d{4}" ngModel #phone="ngModel">
-      </div>
-      <p *ngIf="!phone.valid && phone.touched">Please enter a valid US phone number (with dashes).</p>
-
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea [ngClass]="{invalid: message.invalid && message.touched}" name="message" id="message" required ngModel #message="ngModel"></textarea>
-      </div>
-      <p *ngIf="!message.valid && message.touched">Please enter a valid message.</p>
-
-      <button [disabled]="!contactForm.valid">Send Email</button>
-    </form>
+    </div>
   </div>
 </div>
