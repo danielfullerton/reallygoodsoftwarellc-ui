@@ -11,5 +11,4 @@ export class OurMissionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

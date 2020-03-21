@@ -10,6 +10,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { StackInfoComponent } from './stack-info/stack-info.component';
 import { TechnologyComponent } from './stack-info/technology/technology.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { OurMissionComponent } from './our-mission/our-mission.component';
     AboutUsComponent,
     StackInfoComponent,
     TechnologyComponent,
-    OurMissionComponent
+    OurMissionComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

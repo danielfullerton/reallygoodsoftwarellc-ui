@@ -30,6 +30,10 @@
         padding-left: 15px;
         font-family: 'Roboto',sans-serif;
         font-size: 40px;
+
+        @media (min-width: 768px) {
+          font-size: 70px;
+        }
       }
     }
 
