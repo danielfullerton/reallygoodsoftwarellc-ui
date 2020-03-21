@@ -1,0 +1,16 @@
+<div id="stack-info">
+  <div class="stack-info-container cap-width">
+    <div class="title-container">
+      <h2>Our Technologies</h2>
+    </div>
+    <div class="technology" *ngFor="let tech of technologies; index as i;">
+      <app-technology
+        class="technology"
+        [name]="tech.name"
+        [direction]="i % 2 === 0 ? 'left' : 'right'"
+        [img]="tech.img"
+        [description]="tech.description">
+      </app-technology>
+    </div>
+  </div>
+</div>

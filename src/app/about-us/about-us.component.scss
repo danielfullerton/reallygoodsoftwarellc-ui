@@ -1,24 +1,42 @@
 #about-us {
   width: 100%;
-  height: 1000px; // todo: remove
   position: relative;
   z-index: 1;
   .about-us-container {
-    margin: 0 auto;
+    margin: 180px auto 50px auto;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     .title-container {
-      margin-right: 10%;
-      width: 50%;
+      width: 80%;
+      margin: 0 auto;
       h2 {
         color: #333;
         font-family: 'Roboto', sans-serif;
-        font-size: 40px;
+        font-weight: lighter;
+        font-size: 30px;
         margin: 20px auto;
-        text-align: right;
+        text-align: center;
         @media (min-width: 768px) {
           font-size: 70px;
+        }
+        i {
+          color: #27b815;
+        }
+      }
+    }
+
+    .coding-gif-container {
+      margin-top: 20px;
+      img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+
+        @media (min-width: 768px) {
+          width: 70%;
         }
       }
     }

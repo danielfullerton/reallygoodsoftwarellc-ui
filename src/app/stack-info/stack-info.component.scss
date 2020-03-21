@@ -1,0 +1,23 @@
+#stack-info {
+  background: #ccc;
+  padding-top: 20px;
+  .stack-info-container {
+    padding: 20px 0;
+    .title-container {
+      h2 {
+        margin: 0 auto;
+        font-family: 'Roboto', sans-serif;
+        color: #222;
+        font-size: 30px;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 70px;
+        }
+      }
+    }
+
+    .technology {
+      margin: 40px auto;
+    }
+  }
+}

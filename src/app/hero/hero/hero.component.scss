@@ -47,7 +47,7 @@
           font-size: 20px;
           font-weight: lighter;
           text-align: center;
-          width: 90%;
+          width: 80%;
           margin: 0 auto;
           @media (min-width: 768px) {
             text-align: left;
@@ -70,6 +70,7 @@
         margin: 0 auto;
         left: 0;
         right: 0;
+        animation: fadeDown 500ms ease-in-out forwards;
         @media (min-width: 768px) {
           width: 110%;
           max-width: 1000px;
