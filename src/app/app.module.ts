@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { ContinueComponent } from './continue/continue.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     TechnologyComponent,
     OurMissionComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ContinueComponent
   ],
   imports: [
     BrowserModule,
