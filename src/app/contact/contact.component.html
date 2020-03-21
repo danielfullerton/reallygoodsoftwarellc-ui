@@ -9,7 +9,7 @@
 
           <div class="form-group">
             <label for="name">Full Name</label>
-            <div [ngClass]="{'input-group': true, invalid: name.invalid && name.touched}">
+            <div [ngClass]="{'input-group': true, invalid: name.invalid && name.touched, valid: name.valid && name.touched}">
               <input type="text" name="name" id="name" ngModel pattern="[A-Za-z]+ [A-Za-z]+" required #name="ngModel">
             </div>
           </div>
@@ -17,7 +17,7 @@
 
           <div class="form-group">
             <label for="email">Email</label>
-            <div [ngClass]="{'input-group': true, invalid: email.invalid && email.touched}">
+            <div [ngClass]="{'input-group': true, invalid: email.invalid && email.touched, valid: email.valid && email.touched}">
               <input type="email" name="email" id="email" ngModel required email #email="ngModel">
             </div>
           </div>
@@ -25,7 +25,7 @@
 
           <div class="form-group">
             <label for="phone">Phone</label>
-            <div [ngClass]="{'input-group': true, invalid: phone.invalid && phone.touched}">
+            <div [ngClass]="{'input-group': true, invalid: phone.invalid && phone.touched, valid: phone.valid && phone.touched}">
               <input type="tel" name="phone" id="phone" pattern="[2-9]\d{2}-\d{3}-\d{4}" ngModel #phone="ngModel">
             </div>
           </div>
@@ -33,7 +33,7 @@
 
           <div class="form-group">
             <label for="message">Message</label>
-            <div [ngClass]="{'input-group': true, invalid: message.invalid && message.touched}">
+            <div [ngClass]="{'input-group': true, invalid: message.invalid && message.touched, valid: message.valid && message.touched}">
               <textarea name="message" id="message" required ngModel #message="ngModel"></textarea>
             </div>
           </div>

@@ -42,7 +42,7 @@
 
             label {
               font-family: 'Roboto', sans-serif;
-              font-size: 25px;
+              font-size: 18px;
               padding-bottom: 2px;
               color: #333;
             }
@@ -53,6 +53,11 @@
               &.invalid {
                 input, textarea {
                   border-bottom: 2px solid #d9534f;
+                }
+              }
+              &.valid {
+                input, textarea {
+                  border-bottom: 2px solid #27b815;
                 }
               }
               input, textarea {
@@ -88,6 +93,7 @@
             font-size: 20px;
             margin: 25px auto;
             display: block;
+            cursor: pointer;
             @media (min-width: 768px) {
               flex-direction: row;
             }
@@ -96,6 +102,7 @@
             }
             &:disabled {
               background: #aaa;
+              cursor: default;
             }
           }
         }
