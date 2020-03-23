@@ -1,7 +1,7 @@
 #hero {
   position: relative;
-  background: #333;
-  padding-top: 30px;
+  background: #555;
+  padding-top: 60px;
 
   .hero-container {
     position: relative;
@@ -13,6 +13,9 @@
     width: 90%;
     margin: 0 auto;
     padding-bottom: 120px;
+    @media (min-width: 768px) {
+      padding-bottom: 30px;
+    }
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -26,6 +29,9 @@
       }
 
       .title-container {
+        img {
+          width: 100%;
+        }
         h1 {
           width: 90%;
           margin: 0 auto;
@@ -71,8 +77,8 @@
         margin: 0 auto;
         left: 0;
         right: 0;
-        animation: fadeDown 500ms ease-in-out forwards;
         @media (min-width: 768px) {
+          top: -100px;
           width: 110%;
           max-width: 1000px;
         }
@@ -88,8 +94,9 @@
         font-size: 25px;
         border: none;
         border-radius: 35px;
-        padding: 20px 80px;
+        padding: 20px 50px;
         max-width: 500px;
+        width: 70%;
         cursor: pointer;
         transition: 100ms ease-in-out;
         -webkit-tap-highlight-color: #00000000;
@@ -102,7 +109,7 @@
         text-align: center;
         @media (min-width: 768px) {
           text-align: left;
-          margin: 100px 0 0 5%;
+          //margin: 100px 0 0 5%;
         }
       }
     }

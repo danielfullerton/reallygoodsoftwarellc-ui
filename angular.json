@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "reallygoodsoftwarellc-ui:build"
+            "browserTarget": "reallygoodsoftwarellc:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "reallygoodsoftwarellc-ui:build:production"
+              "browserTarget": "reallygoodsoftwarellc:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "reallygoodsoftwarellc-ui:build"
+            "browserTarget": "reallygoodsoftwarellc:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "reallygoodsoftwarellc-ui:serve"
+            "devServerTarget": "reallygoodsoftwarellc:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "reallygoodsoftwarellc-ui:serve:production"
+              "devServerTarget": "reallygoodsoftwarellc:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "reallygoodsoftwarellc-ui"
+  "defaultProject": "reallygoodsoftwarellc"
 }
