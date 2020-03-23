@@ -8,7 +8,7 @@ export const buildReachOutHtml = (name: string, email: string, message: string, 
           <title>New Message</title>
       </head>
       <body>
-        <img src="${process.env.BASE_URL}/assets/logo.png" style="width: 500px" alt="Logo">
+        <img src="${process.env.BASE_URL}/assets/logo_dark_text.png" style="width: 500px" alt="Logo">
         <p style="margin:0; font-family: 'Roboto', sans-serif">You have a new message from ${name}:</p>
         <p style="margin:0; font-family: 'Roboto', sans-serif">${message}</p>
         <p style="margin:0; font-family: 'Roboto', sans-serif">Phone: <a href="tel:${phone}">${phone}</a></p>
