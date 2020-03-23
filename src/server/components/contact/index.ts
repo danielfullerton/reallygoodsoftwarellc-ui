@@ -10,7 +10,7 @@ const router = express.Router();
 const validators = [
   check('email').isEmail().notEmpty().exists().isLength({ min: 5 }),
   check('name').isString().notEmpty().exists().isLength({ min: 1 }).matches(/[A-Za-z]+ [A-Za-z]+/),
-  check('phone').isString().matches(/[2-9]\d{2}-\d{3}-\d{4}/).optional(),
+  check('phone').isString().matches(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/).optional(),
   check('message').isString().notEmpty().exists().isLength({ min: 1 })
 ];
 

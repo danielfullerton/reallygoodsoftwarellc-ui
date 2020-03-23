@@ -26,10 +26,10 @@
           <div class="form-group">
             <label for="phone">Phone</label>
             <div [ngClass]="{'input-group': true, invalid: phone.invalid && phone.touched, valid: phone.valid && phone.touched}">
-              <input type="tel" name="phone" id="phone" pattern="[2-9]\d{2}-\d{3}-\d{4}" ngModel #phone="ngModel">
+              <input type="tel" name="phone" id="phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" ngModel #phone="ngModel">
             </div>
           </div>
-          <p *ngIf="!phone.valid && phone.touched">Please enter a valid US phone number (with dashes).</p>
+          <p *ngIf="!phone.valid && phone.touched">Please enter a valid US phone number.</p>
 
           <div class="form-group">
             <label for="message">Message</label>
