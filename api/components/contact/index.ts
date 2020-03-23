@@ -1,5 +1,4 @@
 import * as express from 'express';
-import { FormContents } from '../../../app/contact/contact.component';
 import { check, body, validationResult} from 'express-validator';
 import { sendEmail } from './sendEmail';
 import to from 'await-to-js';
@@ -27,7 +26,7 @@ router.post('/', validators, sanitizers, async (req, res) => {
     return res.status(400).send({ errors: errors.array() });
   }
 
-  const { phone, message, email, name } = req.body as FormContents;
+  const { phone, message, email, name } = req.body;
   const html = buildReachOutHtml(name, email, message, phone);
   const [e] = await to(sendEmail('sales@reallygoodsoftware.llc', `New Message from ${body.name}`, html));
   if (e) {

@@ -1,12 +1,14 @@
 {
-  "name": "reallygoodsoftwarellc-ui",
+  "name": "reallygoodsoftwarellc",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "scripts": {
     "ng": "ng",
-    "startFrontEnd": "ng serve --host 0.0.0.0 --proxy-config proxy.conf.json",
-    "start": "node ./dist/server/index.js",
-    "build": "tsc && ng build --prod",
+    "dev": "ng serve --host 0.0.0.0 --proxy-config proxy.conf.json",
+    "start": "node ./api-dist/index.js",
+    "angular-build": "ng build --prod",
+    "server-build": "tsc --project tsconfig.server.json",
+    "build": "npm run angular-build && npm run server-build",
     "gcp-build": "npm run build",
     "test": "ng test",
     "lint": "ng lint",

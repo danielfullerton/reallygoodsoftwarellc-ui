@@ -1,8 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist",
+    "outDir": "./api-dist",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -11,19 +10,15 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "lib": [
       "es2018",
       "dom"
     ]
   },
   "include": [
-    "src/server"
+    "api"
   ],
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+  "exclude": [
+    "src"
+  ]
 }

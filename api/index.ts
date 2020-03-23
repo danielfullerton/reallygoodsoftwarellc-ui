@@ -5,16 +5,16 @@ import { join } from 'path';
 import { contactRouter } from './components/contact';
 
 const app = express();
+export const appRootDir = process.env.APP_ROOT_DIR || join(__dirname, '../app-dist');
 
-app.use(helmet());
 app.use(bodyParser.json());
-app.use(express.static(join(__dirname, '../reallygoodsoftwarellc-ui')));
-app.use('/assets', express.static(join(__dirname, '../reallygoodsoftwarellc-ui/assets')));
+app.get('*.*', express.static(appRootDir, { maxAge: '1d' }));
+app.use(helmet());
 
 app.use('/api/contact', contactRouter);
 
-app.get('*', (req, res) => {
-  return res.sendFile(join(__dirname, '../reallygoodsoftwarellc-ui/index.html'))
+app.all('*', (req, res) => {
+  return res.sendFile(`${appRootDir}/index.html`)
 });
 
 const port = process.env.PORT || 8080;
