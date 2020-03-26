@@ -1,7 +1,33 @@
 #hero {
   position: relative;
-  background: #555;
+  //background: #444;
   padding-top: 60px;
+
+  .hero-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150%;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .blobs-container {
+    position: absolute;
+    bottom: -50px;
+    right: -20px;
+    width: 10%;
+    img {
+      width: 100%;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
 
   .hero-container {
     position: relative;
@@ -30,35 +56,23 @@
 
       .title-container {
         img {
-          width: 100%;
-        }
-        h1 {
-          width: 90%;
-          margin: 0 auto;
-          color: #eee;
-          font-family: 'Abril Fatface', sans-serif;
-          font-weight: lighter;
-          font-size: 50px;
-          text-align: center;
-          @media (min-width: 768px) {
-            font-size: 70px;
-            text-align: left;
-          }
+          width: 80%;
         }
       }
       .sub-text-container {
-        margin: 15px auto;
+        margin: 40px 0 15px 0;
         p {
-          color: #aaa;
-          font-family: 'Roboto', sans-serif;
+          color: #ccc;
+          font-family: 'Roboto Light', sans-serif;
           font-size: 20px;
-          font-weight: lighter;
           text-align: center;
-          width: 80%;
+          width: 100%;
           margin: 0 auto;
           @media (min-width: 768px) {
+            width: 80%;
             text-align: left;
-            font-size: 25px;
+            font-size: 18px;
+            margin: 0;
           }
         }
       }
@@ -75,11 +89,15 @@
         position: absolute;
         width: 90%;
         margin: 0 auto;
+        top: 20px;
         left: 0;
         right: 0;
+        -webkit-filter: drop-shadow(5px 5px 5px #222222);
+        filter: drop-shadow(5px 5px 5px #222222);
+
         @media (min-width: 768px) {
-          top: -100px;
-          width: 110%;
+          position: static;
+          width: 100%;
           max-width: 1000px;
         }
       }
@@ -93,18 +111,24 @@
         font-family: 'Roboto', sans-serif;
         font-size: 25px;
         border: none;
-        border-radius: 35px;
-        padding: 20px 50px;
+        border-radius: 25px;
+        padding: 10px 10px;
         max-width: 500px;
-        width: 70%;
+        width: 60%;
         cursor: pointer;
         transition: 100ms ease-in-out;
         -webkit-tap-highlight-color: #00000000;
         &:hover {
           background: darken(#27b815, 10%);
         }
+        @media (min-width: 768px) {
+          font-size: 20px;
+          width: 200px;
+          padding: 15px 20px;
+          display: block;
+        }
       }
-      &.desktop {
+      &.desktop { // todo: remove
         margin: 40px auto;
         text-align: center;
         @media (min-width: 768px) {

@@ -7,12 +7,12 @@
     .title-container {
       h2 {
         margin: 0 auto;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Thin', sans-serif;
         font-size: 40px;
         text-align: center;
-        color: #333;
+        color: #00a230;
         @media (min-width: 768px) {
-          font-size: 50px;
+          font-size: 40px;
         }
       }
     }
@@ -148,8 +148,8 @@
               margin: 20px auto;
               list-style-type: none;
               color: #555;
-              font-family: 'Roboto', sans-serif;
-              font-size: 18px;
+              font-family: 'Roboto Light', sans-serif;
+              font-size: 20px;
               i {
                 padding-right: 10px;
                 color: #27b815;
@@ -163,7 +163,7 @@
           a {
             text-decoration: none;
             color: #5bc0de !important;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Light', sans-serif;
             font-size: 20px;
             display: block;
             font-weight: bold;

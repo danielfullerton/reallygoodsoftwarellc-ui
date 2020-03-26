@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import * as zenScroll from 'zenscroll';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ScrollService } from '../../scroll.service';
 
 @Component({
@@ -8,9 +7,13 @@ import { ScrollService } from '../../scroll.service';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
+  @ViewChild('fadeInBlobs', { static: false })
+  fadeInBlobs: ElementRef<HTMLElement>;
+
   constructor(private scrollService: ScrollService) { }
 
   ngOnInit() {
+
   }
 
   async onClick() {

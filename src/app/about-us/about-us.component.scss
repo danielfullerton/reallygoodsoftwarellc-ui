@@ -11,16 +11,16 @@
 
     .title-container {
       width: 80%;
-      margin: 0 auto;
+      margin: 0 auto 0 auto;
       h2 {
         color: #333;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Thin', sans-serif;
         font-weight: lighter;
         font-size: 30px;
         margin: 20px auto;
         text-align: center;
         @media (min-width: 768px) {
-          font-size: 70px;
+          font-size: 40px;
         }
         i {
           color: #27b815;
@@ -34,9 +34,11 @@
         width: 90%;
         display: block;
         margin: 0 auto;
+        -webkit-filter: drop-shadow(3px 3px 3px #222222);
+        filter: drop-shadow(3px 3px 3px #222222);
 
         @media (min-width: 768px) {
-          width: 70%;
+          width: 50%;
         }
       }
     }

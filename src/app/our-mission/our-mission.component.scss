@@ -28,11 +28,12 @@
     .title-container {
       h2 {
         padding-left: 15px;
-        font-family: 'Roboto',sans-serif;
+        font-family: 'Roboto Thin',sans-serif;
         font-size: 40px;
+        color: #00a230;
 
         @media (min-width: 768px) {
-          font-size: 70px;
+          font-size: 40px;
         }
       }
     }
@@ -40,12 +41,12 @@
     .mission-container {
       p {
         width: 90%;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Light', sans-serif;
         margin: 0 auto;
         font-size: 15px;
         font-weight: lighter;
         @media (min-width: 768px) {
-          font-size: 30px;
+          font-size: 25px;
         }
       }
     }
@@ -60,7 +61,7 @@
         text-align: right;
         width: 50%;
         h3 {
-          font-family: 'Roboto', sans-serif;
+          font-family: 'Roboto Light', sans-serif;
           font-size: 20px;
           margin: 0;
           @media (min-width: 768px) {
@@ -69,7 +70,7 @@
         }
         h5 {
           font-size: 15px;
-          font-family: 'Roboto', sans-serif;
+          font-family: 'Roboto Thin', sans-serif;
           margin-top: 5px;
           font-weight: lighter;
           color: #888;

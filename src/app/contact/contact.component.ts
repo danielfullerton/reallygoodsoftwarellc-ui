@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ContactService } from './contact.service';
 import to from 'await-to-js';
+import { LoaderService } from '../loader/loader.service';
 
 export interface FormContents {
   name: string;
@@ -22,14 +23,16 @@ export class ContactComponent implements OnInit {
   requestError: string;
   messageSent = false;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private loaderService: LoaderService) { }
 
   ngOnInit() {
   }
 
   async onSubmit() {
     const { name, email, phone, message } = this.form.value as FormContents;
+    this.loaderService.show();
     const [e, r]: [HttpErrorResponse, any] = await to(this.contactService.sendEmail(name, email, message, phone));
+    this.loaderService.hide();
     if (e) {
       this.requestError = 'Something went wrong. Please try again later or email us for help.'
     } else {

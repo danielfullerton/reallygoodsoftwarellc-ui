@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { ContinueComponent } from './continue/continue.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContinueComponent } from './continue/continue.component';
     OurMissionComponent,
     ContactComponent,
     FooterComponent,
-    ContinueComponent
+    ContinueComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,27 @@
 #stack-info {
   background: #eee;
-  padding-top: 20px;
+  padding: 20px 0 40px 0;
   .stack-info-container {
     padding: 20px 0;
     .title-container {
       h2 {
         margin: 0 auto;
-        font-family: 'Roboto', sans-serif;
-        color: #222;
+        font-family: 'Roboto Thin', sans-serif;
+        color: #00a230;;
         font-size: 40px;
         text-align: center;
         @media (min-width: 768px) {
-          font-size: 70px;
+          font-size: 40px;
         }
       }
+    }
+
+    hr {
+      width: 30%;
+      margin: 30px auto;
+      border-color: #aaa;
+      border-style: solid;
+      border-width: 0.5px;
     }
 
     .technology {
