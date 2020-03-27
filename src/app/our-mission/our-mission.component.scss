@@ -27,8 +27,9 @@
 
     .title-container {
       h2 {
-        padding-left: 15px;
-        font-family: 'Roboto Thin',sans-serif;
+        padding-left: 35px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
         font-size: 40px;
         color: #00a230;
 
@@ -70,9 +71,9 @@
         }
         h5 {
           font-size: 15px;
-          font-family: 'Roboto Thin', sans-serif;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 100;
           margin-top: 5px;
-          font-weight: lighter;
           color: #888;
           @media (min-width: 768px) {
             font-size: 20px;
